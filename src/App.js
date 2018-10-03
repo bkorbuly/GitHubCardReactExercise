@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div>
         <Form onSubmit={this.addNewCard}/>
-        <CardList cards={this.state.card}/>
+        <CardList cards={this.state.cards}/>
       </div>    
     );
   }

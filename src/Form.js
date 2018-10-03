@@ -20,12 +20,12 @@ class Form extends React.Component{
             <form onSubmit={this.handleSubmit}>
                 <input type="text"
                     value = {this.state.userName}
-                    onChange = {(event) => this.setState({ userName: event.target.userName})}
+                    onChange = {(event) => this.setState({ userName: event.target.value})}
                     placeholder = "Github username" required />
                 <button type="submit">Add card</button>
             </form>
         )
     };
-}
+};
 
 export default Form;
