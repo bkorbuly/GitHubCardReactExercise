@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Form from './Form.js';
+import CardList from './CardList.js';
 
 class App extends Component {
+  state = {
+    cards: []
+  }
+
+  addNewCard = (cardInfo) =>{
+    this.setState(prevState => ({
+      cards: prevState.cards.concat(cardInfo)
+    }));
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <div>
+        <Form onSubmit={this.addNewCard}/>
+        <CardList cards={this.state.card}/>
+      </div>    
     );
   }
 }
